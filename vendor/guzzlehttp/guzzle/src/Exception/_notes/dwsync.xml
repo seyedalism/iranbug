@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="BadResponseException.php" server="ftp.iranbaguette.com//" local="132075776518085591" remote="132034441200000000" Dst="2" />
+<file name="ClientException.php" server="ftp.iranbaguette.com//" local="132075776518465613" remote="132034441200000000" Dst="2" />
+<file name="ConnectException.php" server="ftp.iranbaguette.com//" local="132075776518715627" remote="132034441200000000" Dst="2" />
+<file name="GuzzleException.php" server="ftp.iranbaguette.com//" local="132075776518945641" remote="132034441200000000" Dst="2" />
+<file name="RequestException.php" server="ftp.iranbaguette.com//" local="132075776519545675" remote="132034441200000000" Dst="2" />
+<file name="SeekException.php" server="ftp.iranbaguette.com//" local="132075776519815690" remote="132034441200000000" Dst="2" />
+<file name="ServerException.php" server="ftp.iranbaguette.com//" local="132075776520245715" remote="132034441200000000" Dst="2" />
+<file name="TooManyRedirectsException.php" server="ftp.iranbaguette.com//" local="132075776520395724" remote="132034441200000000" Dst="2" />
+<file name="TransferException.php" server="ftp.iranbaguette.com//" local="132075776520795746" remote="132034441200000000" Dst="2" />
+</dwsync>

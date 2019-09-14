@@ -1,0 +1,73 @@
+[19-May-2019 18:19:54 Asia/Tehran] PHP Fatal error:  Uncaught Error: Class 'App\Models\User' not found in /home/iranbagu/a.iranbaguette.com/app/Core/Auth.php:20
+Stack trace:
+#0 /home/iranbagu/a.iranbaguette.com/app/Controllers/UserController.php(54): App\Core\Auth::login('test', 'test')
+#1 [internal function]: UserController->login()
+#2 /home/iranbagu/a.iranbaguette.com/app/Core/Router.php(194): call_user_func_array(Array, Array)
+#3 /home/iranbagu/a.iranbaguette.com/app/Bootstrap.php(12): App\Core\Router::route()
+#4 /home/iranbagu/a.iranbaguette.com/public/index.php(6): App\Bootstrap->run()
+#5 {main}
+  thrown in /home/iranbagu/a.iranbaguette.com/app/Core/Auth.php on line 20
+[19-May-2019 18:20:47 Asia/Tehran] PHP Fatal error:  Uncaught Error: Class 'App\Models\User' not found in /home/iranbagu/a.iranbaguette.com/app/Core/Auth.php:21
+Stack trace:
+#0 /home/iranbagu/a.iranbaguette.com/app/Controllers/UserController.php(54): App\Core\Auth::login('test', 'test')
+#1 [internal function]: UserController->login()
+#2 /home/iranbagu/a.iranbaguette.com/app/Core/Router.php(194): call_user_func_array(Array, Array)
+#3 /home/iranbagu/a.iranbaguette.com/app/Bootstrap.php(12): App\Core\Router::route()
+#4 /home/iranbagu/a.iranbaguette.com/public/index.php(6): App\Bootstrap->run()
+#5 {main}
+  thrown in /home/iranbagu/a.iranbaguette.com/app/Core/Auth.php on line 21
+[19-May-2019 18:20:49 Asia/Tehran] PHP Fatal error:  Uncaught Error: Class 'App\Models\User' not found in /home/iranbagu/a.iranbaguette.com/app/Core/Auth.php:21
+Stack trace:
+#0 /home/iranbagu/a.iranbaguette.com/app/Controllers/UserController.php(54): App\Core\Auth::login('test', 'test')
+#1 [internal function]: UserController->login()
+#2 /home/iranbagu/a.iranbaguette.com/app/Core/Router.php(194): call_user_func_array(Array, Array)
+#3 /home/iranbagu/a.iranbaguette.com/app/Bootstrap.php(12): App\Core\Router::route()
+#4 /home/iranbagu/a.iranbaguette.com/public/index.php(6): App\Bootstrap->run()
+#5 {main}
+  thrown in /home/iranbagu/a.iranbaguette.com/app/Core/Auth.php on line 21
+[19-May-2019 18:20:51 Asia/Tehran] PHP Fatal error:  Uncaught Error: Class 'App\Models\User' not found in /home/iranbagu/a.iranbaguette.com/app/Core/Auth.php:21
+Stack trace:
+#0 /home/iranbagu/a.iranbaguette.com/app/Controllers/UserController.php(54): App\Core\Auth::login('test', 'test')
+#1 [internal function]: UserController->login()
+#2 /home/iranbagu/a.iranbaguette.com/app/Core/Router.php(194): call_user_func_array(Array, Array)
+#3 /home/iranbagu/a.iranbaguette.com/app/Bootstrap.php(12): App\Core\Router::route()
+#4 /home/iranbagu/a.iranbaguette.com/public/index.php(6): App\Bootstrap->run()
+#5 {main}
+  thrown in /home/iranbagu/a.iranbaguette.com/app/Core/Auth.php on line 21
+[19-May-2019 18:21:09 Asia/Tehran] PHP Fatal error:  Uncaught Error: Class 'App\Models\User' not found in /home/iranbagu/a.iranbaguette.com/app/Core/Auth.php:21
+Stack trace:
+#0 /home/iranbagu/a.iranbaguette.com/app/Controllers/UserController.php(54): App\Core\Auth::login('test', 'test')
+#1 [internal function]: UserController->login()
+#2 /home/iranbagu/a.iranbaguette.com/app/Core/Router.php(194): call_user_func_array(Array, Array)
+#3 /home/iranbagu/a.iranbaguette.com/app/Bootstrap.php(12): App\Core\Router::route()
+#4 /home/iranbagu/a.iranbaguette.com/public/index.php(6): App\Bootstrap->run()
+#5 {main}
+  thrown in /home/iranbagu/a.iranbaguette.com/app/Core/Auth.php on line 21
+[19-May-2019 18:21:18 Asia/Tehran] PHP Fatal error:  Uncaught Error: Class 'App\Models\User' not found in /home/iranbagu/a.iranbaguette.com/app/Core/Auth.php:21
+Stack trace:
+#0 /home/iranbagu/a.iranbaguette.com/app/Controllers/UserController.php(54): App\Core\Auth::login('hj021hj', '66665521')
+#1 [internal function]: UserController->login()
+#2 /home/iranbagu/a.iranbaguette.com/app/Core/Router.php(194): call_user_func_array(Array, Array)
+#3 /home/iranbagu/a.iranbaguette.com/app/Bootstrap.php(12): App\Core\Router::route()
+#4 /home/iranbagu/a.iranbaguette.com/public/index.php(6): App\Bootstrap->run()
+#5 {main}
+  thrown in /home/iranbagu/a.iranbaguette.com/app/Core/Auth.php on line 21
+[27-May-2019 22:01:33 Asia/Tehran] PHP Fatal error:  Uncaught Error: Class 'Zarinpal\Zarinpal' not found in /home/iranbagu/a.iranbaguette.com/app/Core/Dargah.php:16
+Stack trace:
+#0 /home/iranbagu/a.iranbaguette.com/app/Controllers/BasketController.php(74): App\Core\Dargah::transaction(10, 'http://a.iranba...')
+#1 [internal function]: BasketController->checkout()
+#2 /home/iranbagu/a.iranbaguette.com/app/Core/Router.php(194): call_user_func_array(Array, Array)
+#3 /home/iranbagu/a.iranbaguette.com/app/Bootstrap.php(12): App\Core\Router::route()
+#4 /home/iranbagu/a.iranbaguette.com/public/index.php(6): App\Bootstrap->run()
+#5 {main}
+  thrown in /home/iranbagu/a.iranbaguette.com/app/Core/Dargah.php on line 16
+[27-May-2019 22:12:07 Asia/Tehran] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/iranbagu/a.iranbaguette.com/app/Core/Dargah.php:26) in /home/iranbagu/a.iranbaguette.com/vendor/zarinpal/zarinpal/src/Zarinpal.php on line 94
+[27-May-2019 22:12:30 Asia/Tehran] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/iranbagu/a.iranbaguette.com/app/Core/Dargah.php:26) in /home/iranbagu/a.iranbaguette.com/vendor/zarinpal/zarinpal/src/Zarinpal.php on line 94
+[27-May-2019 22:12:32 Asia/Tehran] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/iranbagu/a.iranbaguette.com/app/Core/Dargah.php:26) in /home/iranbagu/a.iranbaguette.com/vendor/zarinpal/zarinpal/src/Zarinpal.php on line 94
+[27-May-2019 22:48:19 Asia/Tehran] PHP Fatal error:  Cannot declare class Session, because the name is already in use in /home/iranbagu/a.iranbaguette.com/app/Core/Session.php on line 3
+[30-May-2019 17:10:10 Asia/Tehran] PHP Fatal error:  Uncaught Exception: controller dose not exist in /home/iranbagu/a.iranbaguette.com/app/Core/Router.php:200
+Stack trace:
+#0 /home/iranbagu/a.iranbaguette.com/app/Bootstrap.php(12): App\Core\Router::route()
+#1 /home/iranbagu/a.iranbaguette.com/public/index.php(6): App\Bootstrap->run()
+#2 {main}
+  thrown in /home/iranbagu/a.iranbaguette.com/app/Core/Router.php on line 200

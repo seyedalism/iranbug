@@ -1,0 +1,14 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title'); ?>
+
+خوش آمدید.
+<?php $this->stopSection(); ?>
+
+
+
+<?php $this->startSection('content'); ?>
+
+
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('admin.master'); } ?>

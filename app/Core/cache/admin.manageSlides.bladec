@@ -1,0 +1,94 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title'); ?>
+ مدیریت اسلاید ها
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('content'); ?>
+
+ <div class="content">
+ <div class="container-fluid">
+ <div class="row">
+
+ <?php if(isset($message)): ?>
+ <div class="col-12">
+ <div class="card">
+ <div class="card-body">
+ <span class="alert alert-info "><?php echo static::e($message); ?></span>
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+
+ <?php if(!empty($errors)): ?>
+ <div class="col-12">
+ <div class="card">
+ <div class="card-body">
+ <?php $__currentLoopData = $errors; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <span class="alert alert-danger "><?php echo static::e($error); ?></span>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+
+ <?php if(isset($errors) || isset($message)): ?>
+ <p><a href="<?php echo static::e(url('restaurant/category')); ?>" class="btn btn-primary" >بازگشت</a></p>
+ <?php endif; ?>
+
+ <?php if ( ! (isset($errors) || isset($message))): ?>
+ <div class="col-lg-6">
+ <div class="card">
+ <div class="card-body">
+ <h5 class="card-title mb-2 text-bold">افزودن اسلاید</h5>
+
+ <p class="card-text">
+ <form action="<?php echo static::e(url('admin/slides')); ?>" method="post" enctype="multipart/form-data">
+ <?php  echo '<input type="hidden" name="_method" value="PUT"/>';?>
+ <?php  echo '<input type="hidden" name="_token" value=""/>';?>
+
+ <select name="category" class="form-control">
+ <?php $__currentLoopData = $cats; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <option value="<?php echo static::e($cat->id); ?>"><?php echo static::e($cat->name); ?></option>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </select>
+ <input type="file" name="img" class="mb-2 form-control">
+ <input type="submit" class="btn btn-primary" value="افزودن">
+ </form>
+ </p>
+
+ </div>
+ </div>
+ </div>
+
+ <div class="col-lg-6">
+ <div class="card">
+ <div class="card-body">
+ <h5 class="card-title mb-2 text-bold"></h5>
+
+ <p class="card-text">
+ <p class="dropdown-divider"></p>
+ <table class="table table-bordered table table-hover">
+ <?php $__empty_1 = true; foreach($slides as $slide): $__empty_1 = false; ?>
+ <tr>
+ <td class="col-12"><img class="col-10 col-lg-3 img-fluid" src="<?php echo static::e(asset('upload/'.$slide->img)); ?>"></td>
+ <td><a href="<?php echo static::e(url('admin/slides/delete/'.$slide->id)); ?>">حذف</a></td>
+ </tr>
+ <?php endforeach; if ($__empty_1): ?>
+ <p>هیچ اسلاید یافت نشد</p>
+ <?php endif; ?>
+ </table>
+ </p>
+
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+ <!-- /.row -->
+ </div><!-- /.container-fluid -->
+ </div>
+ </div>
+<?php $this->stopSection(); ?>
+
+
+<?php if (@$_shouldextend[1]) { echo $this->runChild('admin.master'); } ?>

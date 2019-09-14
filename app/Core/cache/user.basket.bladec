@@ -1,0 +1,49 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('title'); ?>
+ ایران باگت
+<?php $this->stopSection(); ?>
+<?php $this->startSection('content'); ?>
+
+ <div class="w-100" style="margin-top: 1em;">
+ <div>.</div>
+ <div class="w-100 mx-auto d-block mb-3">
+ <table class="text-center table table-bordered table-hover">
+ <tr>
+ <th colspan="4" class="bg-dark text-white">سبد خرید</th>
+ </tr>
+ <tr>
+ <th>غذا</th>
+ <th>تعداد</th>
+ <th>قیمت</th>
+ <th>حذف</th>
+ </tr>
+ <?php 
+ $p=0;
+ ?>
+
+ <?php $__empty_1 = true; foreach($basket as $id => $val): $__empty_1 = false; ?>
+ <?php 
+ $p += $val['price']*$val['count'];
+ ?>
+ <tr>
+ <th><?php echo static::e($val['name']); ?></th>
+ <th><?php echo static::e($val['count']); ?></th>
+ <th><?php echo static::e($val['price']); ?></th>
+ <th><a href="<?php echo static::e(url('remove-from-basket/'.$id)); ?>">حذف</a></th>
+ </tr>
+ <?php endforeach; if ($__empty_1): ?>
+ <div class="alert alert-danger col-12 text-center">سبد خرید شما خالی است.</div>
+ <?php endif; ?>
+
+ </table>
+ <div class="container rounded p-2 text-white">
+ <span class="bg-dark p-3 rounded"><span>قیمت کل: </span><span><?php echo static::e($p); ?></span> <span>تومان</span></span>
+ <a href="<?php echo static::e(url('checkout')); ?>" class="btn btn-primary p-3 rounded">اتمام خرید</a>
+ </div>
+ </div>
+
+ </div>
+
+<?php $this->stopSection(); ?>
+
+<?php if (@$_shouldextend[1]) { echo $this->runChild('master'); } ?>

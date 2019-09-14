@@ -1,0 +1,78 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title'); ?>
+ میز های رزرو شده
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('content'); ?>
+<?php $ResReserve = $this->injectClass('App\Models', 'ResReserve'); ?>
+<?php $jdf = $this->injectClass('App\Core', 'jdf'); ?>
+ <div class="content">
+ <div class="container-fluid">
+ <div class="row">
+
+ <div class="col-lg-12">
+ <div class="card">
+ <div class="card-body">
+
+ <table class="table table-hover table-responsive">
+ <tr>
+ <th>#</th>
+ <th>میز (نفره)</th>
+ <th>نام و نام خانوادگی</th>
+ <th>شماره تلفن</th>
+ <th>زمان شروع</th>
+ <th>زمان پایان</th>
+ <th>جزئیات</th>
+ </tr>
+
+ <?php $__empty_1 = true; foreach($reserve as $key => $r): $__empty_1 = false; ?>
+ <?php 
+ $miz = [];
+ $exp = explode('-',$r->res_reserve_ids);
+ $exp = ($exp === "") ? $r->res_reserve_ids : $exp;
+ foreach ($exp as $e)
+ {
+ $s = $ResReserve::findById($e);
+ if(empty($s))
+ continue;
+ $miz[] = ($s[0])->capacity;
+ }
+ $miz = implode(' | ',$miz);
+ if(empty($miz)) $miz = null;
+ ?>
+ <tr>
+ <td><?php echo static::e($key); ?></td>
+ <td><?php echo $miz ?? '<span class="text-danger">شما میز را حذف کردید</span>'; ?></td>
+ <td><?php echo static::e($r->name); ?></td>
+ <td><?php echo static::e($r->phone); ?></td>
+ <td><?php echo static::e($jdf::jdate('y-m-d G:i',$r->time_s)); ?></td>
+ <td><?php echo static::e($jdf::jdate('y-m-d G:i',$r->time_e)); ?></td>
+ <td><?php echo static::e($r->detail); ?></td>
+ </tr>
+ <?php endforeach; if ($__empty_1): ?>
+ <tr>
+ <td colspan="4">میزی رزرو نشده است.</td>
+ </tr>
+ <?php endif; ?>
+ </table>
+
+ <ul class="pagination mt-5">
+ <li><a class="page-link" href="<?php echo static::e(url('admin/manage-products/'.$pages['next'])); ?>">صفحه بعد</a></li>
+ <li><a class="page-link" href="<?php echo static::e(url('admin/manage-products/'.$pages['pre'])); ?>">صفحه قبل</a></li>
+ </ul>
+
+ </div>
+ </div>
+
+ <!-- /.col-md-6 -->
+ </div>
+ <!-- /.col-md-6 -->
+ </div>
+ <!-- /.row -->
+ </div><!-- /.container-fluid -->
+ </div>
+
+
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('admin.master'); } ?>

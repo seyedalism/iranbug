@@ -1,0 +1,49 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title'); ?>
+سفارشات
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('content'); ?>
+
+ <div class="d-block mx-auto">
+
+ <div class="container">
+ <div style="background-color: #f39c12;" class="rounded text-center font-weight-bold shadow text-white py-4 m-auto">
+ <div>.</div>
+ سفارشات
+ </div>
+ <table class="table table-hover table-striped">
+
+ <?php $__empty_1 = true; foreach($pays as $pay): $__empty_1 = false; ?>
+ <tr>
+ <th class="col-12" colspan="3">
+ <span>شماره فاکتور : </span><span><?php echo static::e($pay->factor); ?></span>-----
+ <span> وضعیت : </span><span><?php echo static::e($pay->status); ?>در دست بررسی</span>
+ </th>
+ </tr>
+
+ <?php 
+ $products = unserialize($pay->products,["allowed_classes" => false]);
+ ?>
+
+ <?php $__currentLoopData = $products; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <tr>
+ <td><?php echo static::e($product['title']); ?></td>
+ <td><?php echo static::e($product['price']); ?> تومان </td>
+ <td>تعداد:<?php echo static::e($product['count']); ?></td>
+ </tr>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+
+ <?php endforeach; if ($__empty_1): ?>
+ <tr><td colspan="5">شما تاکنون هیچ محصولی خریداری نکرده اید.</td></tr>
+ <?php endif; ?>
+
+ </table>
+
+ </div>
+
+ </div>
+
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('master'); } ?>

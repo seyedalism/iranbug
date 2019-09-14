@@ -1,0 +1,57 @@
+<?php /*<!doctype html>*/ ?>
+<?php /*<html lang="en">*/ ?>
+<?php /*<head>*/ ?>
+<?php /*    <meta charset="UTF-8">*/ ?>
+<?php /*    <meta name="viewport"*/ ?>
+<?php /*          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">*/ ?>
+<?php /*    <meta http-equiv="X-UA-Compatible" content="ie=edge">*/ ?>
+<?php /*    <title>Document</title>*/ ?>
+<?php /*</head>*/ ?>
+<?php /*<body>*/ ?>
+
+
+<?php /*<!-- Start Live Chat Code -->*/ ?>
+<?php /*<script type="text/javascript" src="http://go.iranbaguette.com/assets/js/jquery.min.js"></script>*/ ?>
+<?php /*<script type="text/javascript">jQuery.noConflict();</script>*/ ?>
+<?php /*<script type="text/javascript">jQuery(document).ready(function($) {$.ajaxSetup({xhrFields: {withCredentials: true},headers: {"X-Requested-With": "XMLHttpRequest"}});$.ajax({type: "GET",url: "http://go.iranbaguette.com/live_chat",dataType: "html",success: function(data) {$("body").append(data);}});});</script>*/ ?>
+<?php /*<!-- End Live Chat Code -->*/ ?>
+<?php /*</body>*/ ?>
+<?php /*</html>*/ ?>
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('content'); ?>
+
+ <div id="demo" class="carousel slide" data-ride="carousel">
+ <ul class="carousel-indicators">
+ <?php for($i=0;$i<3;$i++): ?>
+ <li  data-slide-to="<?php echo static::e($i); ?>" <?php if($i==0): ?>  class="active" <?php endif; ?> ></li>
+ <?php endfor; ?>
+
+ </ul>
+ <div class="carousel-inner">
+
+ <?php for($i=0;$i<3;$i++): ?>
+ <div class="carousel-item <?php if($i==0): ?> active <?php endif; ?> ">
+ <a href="<?php echo static::e(asset('www.digikala.com')); ?>">
+ <img src="<?php echo static::e(asset('img/loginBack.jpg')); ?>" alt="Los Angeles" width="1100" height="500"
+ style="width: 100%;height: 100%;">
+ </a>
+ <div class="carousel-caption">
+ <h3><?php echo static::e($i); ?></h3>
+ <p>فروشگاه دیجی کالا فروشگاه خوبیه</p>
+ </div>
+ </div>
+ <?php endfor; ?>
+
+
+ </div>
+ <p class="carousel-control-prev" data-slide="prev">
+ <span class="carousel-control-prev-icon"></span>
+ </p>
+ <p class="carousel-control-next" data-slide="next">
+ <span class="carousel-control-next-icon"></span>
+ </p>
+ </div>
+<?php $this->stopSection(); ?>
+
+<?php if (@$_shouldextend[1]) { echo $this->runChild('master'); } ?>

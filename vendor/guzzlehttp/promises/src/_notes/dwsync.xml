@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AggregateException.php" server="ftp.iranbaguette.com//" local="132075776535846607" remote="132034441200000000" Dst="2" />
+<file name="CancellationException.php" server="ftp.iranbaguette.com//" local="132075776536176626" remote="132034441200000000" Dst="2" />
+<file name="Coroutine.php" server="ftp.iranbaguette.com//" local="132075776536576649" remote="132034441200000000" Dst="2" />
+<file name="EachPromise.php" server="ftp.iranbaguette.com//" local="132075776537136681" remote="132034441200000000" Dst="2" />
+<file name="FulfilledPromise.php" server="ftp.iranbaguette.com//" local="132075776537486701" remote="132034441200000000" Dst="2" />
+<file name="Promise.php" server="ftp.iranbaguette.com//" local="132075776537956728" remote="132034441200000000" Dst="2" />
+<file name="PromiseInterface.php" server="ftp.iranbaguette.com//" local="132075776538496759" remote="132034441200000000" Dst="2" />
+<file name="PromisorInterface.php" server="ftp.iranbaguette.com//" local="132075776538546762" remote="132034441200000000" Dst="2" />
+<file name="RejectedPromise.php" server="ftp.iranbaguette.com//" local="132075776538956785" remote="132034441200000000" Dst="2" />
+<file name="RejectionException.php" server="ftp.iranbaguette.com//" local="132075776539316806" remote="132034441200000000" Dst="2" />
+<file name="TaskQueue.php" server="ftp.iranbaguette.com//" local="132075776539486815" remote="132034441200000000" Dst="2" />
+<file name="TaskQueueInterface.php" server="ftp.iranbaguette.com//" local="132075776539776832" remote="132034441200000000" Dst="2" />
+<file name="functions.php" server="ftp.iranbaguette.com//" local="132075776540726886" remote="132034441200000000" Dst="2" />
+<file name="functions_include.php" server="ftp.iranbaguette.com//" local="132075776540796890" remote="132034441200000000" Dst="2" />
+</dwsync>

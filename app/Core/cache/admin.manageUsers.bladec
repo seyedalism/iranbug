@@ -1,0 +1,121 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title'); ?>
+ مدیریت کاربران
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('content'); ?>
+ <?php $Developer = $this->injectClass('App\Models', 'Developer'); ?>
+ <?php $Res = $this->injectClass('App\Models', 'Res'); ?>
+ <div class="content">
+ <div class="container-fluid">
+ <div class="row">
+
+ <div class="col-lg-12">
+ <div class="card">
+ <div class="card-body">
+ <?php if(!(isset($s) || isset($dev))): ?>
+ <div class="alert alert-info">رنگ قرمز به منزله ی کاربر ویژه و رنگ آبی ، بازی ساز می باشد.</div>
+ <?php endif; ?>
+ <table class="table table-hover table-responsive">
+ <tr>
+ <th>#</th>
+
+ <?php if(!(isset($s))): ?>
+ <th>نام</th>
+ <th>نام خانوادگی</th>
+ <th>تلفن</th>
+ <th>نام کاربری</th>
+ <th>ایمیل</th>
+ <?php if(!(isset($dev))): ?>
+ <th>آدرس</th>
+ <?php endif; ?>
+ <th>-</th>
+ <?php endif; ?>
+ <?php if((isset($s) && !isset($dev))): ?>
+ <th>نام رستوران</th>
+ <th>نام کاربری</th>
+ <th>حذف</th>
+ <?php endif; ?>
+
+ <?php if(!(isset($s) || isset($dev))): ?>
+ <th>-</th>
+ <th>-</th>
+ <?php endif; ?>
+ </tr>
+
+ <?php $__empty_1 = true; foreach($users as $key => $user): $__empty_1 = false; ?>
+ <?php 
+ $Sborder = false;
+ $Dborder = false;
+ if(!(isset($s) || isset($dev)))
+ {
+ if(!empty($Developer::findByUsername($user->username)))
+ {
+ $Dborder = true;
+ }
+ if(!empty($Res::findByUsername($user->username)))
+ {
+ $Sborder = true;
+ }
+ }
+ ?>
+ <tr>
+ <td class="
+ <?php if($Sborder): ?>
+ bg-danger text-white
+ <?php elseif($Dborder): ?>
+ bg-info text-white
+ <?php endif; ?>
+ "><?php echo static::e($key); ?></td>
+
+ <?php if(!(isset($s))): ?>
+ <td><?php echo static::e($user->fname); ?></td>
+ <td><?php echo static::e($user->lname); ?></td>
+ <td><?php echo static::e($user->phone); ?></td>
+ <td><?php echo static::e($user->username); ?></td>
+ <td><?php echo static::e($user->email); ?></td>
+ <?php if(!(isset($dev))): ?>
+ <td><?php echo static::e($user->address); ?></td>
+ <?php endif; ?>
+ <?php endif; ?>
+
+ <?php if((isset($s) && !isset($dev))): ?>
+ <td><?php echo static::e($user->name); ?></td>
+ <td><?php echo static::e($user->username); ?></td>
+ <?php endif; ?>
+
+ <?php if(!(isset($s) || isset($dev))): ?>
+ <td><a href="<?php echo static::e(url('admin/promote-to-special/'.$user->id)); ?>">ارتقاء به کاربر ویژه</a></td>
+ <td><a href="<?php echo static::e(url('admin/promote-to-dev/'.$user->id)); ?>">ارتقاء به بازی ساز</a></td>
+ <?php endif; ?>
+
+ <?php if(isset($s)): ?>
+ <td><a href="<?php echo static::e(url('admin/remove-user/s/'.$user->id)); ?>">حذف</a></td>
+ <?php elseif(isset($dev)): ?>
+ <td><a href="<?php echo static::e(url('admin/remove-user/d/'.$user->id)); ?>">حذف</a></td>
+ <?php else: ?>
+ <td><a href="<?php echo static::e(url('admin/remove-user/r/'.$user->id)); ?>">حذف</a></td>
+ <?php endif; ?>
+ </tr>
+ <?php endforeach; if ($__empty_1): ?>
+ <tr>
+ <td colspan="4">هیچ کاربری یافت نشد</td>
+ </tr>
+ <?php endif; ?>
+ </table>
+
+ </div>
+ </div>
+
+ <!-- /.col-md-6 -->
+ </div>
+ <!-- /.col-md-6 -->
+ </div>
+ <!-- /.row -->
+ </div><!-- /.container-fluid -->
+ </div>
+
+
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('admin.master'); } ?>

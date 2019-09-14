@@ -1,0 +1,29 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title'); ?>
+ ایران باگت | صفحه بازی ها
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('content'); ?>
+ <div class="container-fluid mt-2">
+ <div class="row p-2"></div>
+ <div class="row mb-3 justify-content-center" style="overflow-x: hidden;overflow-y:scroll;height: 25rem; direction: ltr !important">
+ <?php for($i=0;$i<30;$i++): ?>
+ <a href="<?php echo static::e(url('restaurants/1')); ?>" style="color: white">
+ <div class="res-ads ads-parent position-relative m-3 mt-2">
+ <a href="games/1" style="color: #fff">
+ <img class="img-fluid w-100 h-100" src="<?php echo static::e(asset('img/mario.png')); ?>">
+ <span class="IB-ads text-center w-100 p-2 position-absolute h-50">
+ بازی گوسفند دیوانه
+ </span>
+ </a>
+ </div>
+ </a>
+ <?php endfor; ?>
+ </div>
+
+
+ </div>
+
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('master'); } ?>

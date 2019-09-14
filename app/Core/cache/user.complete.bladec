@@ -1,0 +1,23 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('title'); ?>
+ ایران باگت
+<?php $this->stopSection(); ?>
+<?php $this->startSection('content'); ?>
+
+ <div class="container-fluid pl-5 row d-flex flex-column flex-lg-row justify-content-center" style="margin-top: 1em;">
+
+ <div class="col-12 mb-3">
+ <div class="container rounded p-2 text-white">
+ <p class="alert alert-light">
+ <?php echo static::e($message); ?>
+
+ </p>
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ </div>
+ </div>
+
+ </div>
+
+<?php $this->stopSection(); ?>
+
+<?php if (@$_shouldextend[1]) { echo $this->runChild('master'); } ?>

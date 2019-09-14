@@ -1,0 +1,45 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title'); ?>
+ورود | ایران باگت
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('menu'); ?>
+<div class="container d-flex flex-column justify-content-center align-items-center mt-3">
+ <div class="loginBox col-11 col-md-7 rounded p-3 text-center">
+
+ <img src="<?php echo static::e(asset('img/logoiran.png')); ?>" alt="iranbuget" class=" mb-3 img-fluid">
+ <?php if(isset($errors)): ?>
+ <?php $__currentLoopData = $errors; $this->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $this->incrementLoopIndices(); $loop = $this->getFirstLoop(); ?>
+ <p class="alert-danger  alert"><?php echo static::e($error); ?></p>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php endif; ?>
+ <form action="<?php echo static::e(url('login')); ?>" method="post">
+ <div class="input-group mb-2">
+ <input type="text" class="form-control" name="username" required><br>
+ <div class="input-group-append">
+ <span class="input-group-text text-dark">نام کاربری</span>
+ </div>
+ </div>
+ <div class="input-group mb-2">
+ <input type="password" class="form-control" name="password" required><br>
+ <div class="input-group-append">
+ <span class="input-group-text text-dark">رمز عبور</span>
+ </div>
+ </div>
+ <input type="submit" class="btn btn-primary mb-2" value="ورود">
+
+ </form>
+
+ </div>
+ <a class="mt-2 col-11 col-md-7 btn btn-block btn-info" href="<?php echo static::e(url('')); ?>">بازگشت به صفحه اصلی</a>
+</div>
+<?php /*<?php */ ?>
+ <?php /*if(isset($_POST['submit'])){*/ ?>
+ <?php /*$username=$_POST['username'];*/ ?>
+ <?php /*$pss=$_POST['pass'];*/ ?>
+ <?php /*Cookie::set('username',$username,60*60*24*12);*/ ?>
+ <?php /*}*/ ?>
+<?php /* ?>*/ ?>
+<?php $this->stopSection(); ?>
+<?php if (@$_shouldextend[1]) { echo $this->runChild('user.master'); } ?>
