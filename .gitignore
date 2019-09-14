@@ -95,4 +95,5 @@ fabric.properties
 # End of https://www.gitignore.io/api/phpstorm,dreamweaver
 
 .htaccess
-public/admin
+
+public/admin/*
