@@ -21,6 +21,8 @@ Router::get("checkout" , "BasketController@checkout");
 
 Router::get("reply" , "BasketController@reply");
 
+Router::post("pcode/{id}" , "HomeController@pcode");
+
 /*
  *
  *  _______________ admin ________________
@@ -36,91 +38,73 @@ Router::post("admin/login" , "AdminController@login");
 
 Router::get("admin/logout" , "AdminController@logout");
 
-//cyberspace
-    //manager
-Router::get("admin/manage-cyberspace" , "AdminController@cyberspace");
-
 //advertise
 Router::get('admin/advertise','AdvertiseController@show');
-
 Router::get('admin/advertise/delete/{id}','AdvertiseController@delete');
-
 Router::put('admin/advertise','AdvertiseController@add');
+
+Router::get('admin/advertise/zirnevis','AdvertiseController@zirnevisManage');
+Router::get('admin/advertise/zirnevis/delete/{id}','AdvertiseController@zirnevisDelete');
+Router::put('admin/advertise/zirnevis','AdvertiseController@zirnevisAdd');
+
+Router::get('admin/advertise/dynamic','AdvertiseController@dynamicManage');
+Router::get('admin/advertise/dynamic/delete/{id}','AdvertiseController@dynamicDelete');
+Router::put('admin/advertise/dynamic','AdvertiseController@dynamicAdd');
 
 // table
 Router::put("admin/add/sit" , "OrderController@addSit");
-
 Router::get("admin/reserved" , "OrderController@showReserved");
 
 //admin detail res
 Router::get("admin/detail-Res","ResController@Adetail");
-
 Router::post("admin/detail-Res","ResController@AeditDetail");
 
 //manage pays
 Router::get('admin/manage-pays' , 'PayController@show');
-
 Router::get('admin/remove-pay/{id}' , 'PayController@removePay');
-
 Router::get('admin/detail-pay/{id}' , 'PayController@detailPay');
 
 //admin manage users
 Router::get("admin/manage-users" , "UserController@showUsers");
-
 Router::get("admin/manage-special-users" , "UserController@showSpecials");
-
 Router::get("admin/manage-dev-users" , "UserController@showDevs");
-
 Router::get("admin/remove-user/{type}/{id}" , "UserController@removeUser");
-
 Router::get("admin/show-user/{id}" , "UserController@showUser");
-
 Router::get("admin/promote-to-special/{id}" , "UserController@promoteToS");
-
 Router::get("admin/promote-to-dev/{id}" , "UserController@promoteToD");
 
 // about us and benefits
 Router::post("admin/upload" , 'OptionController@upload');
-
 Router::get("admin/about-us" , 'OptionController@aboutUs');
-
 Router::post("admin/about-us" , 'OptionController@addAbout');
-
 Router::get("admin/benefits" , 'OptionController@benefits');
-
 Router::post("admin/benefits" , 'OptionController@addBenefits');
 
 // category
 Router::get("admin/category" , "CategoryController@show");
-
 Router::put("admin/category" , "CategoryController@add");
-
 Router::patch("admin/category" , "CategoryController@update");
-
 Router::get("admin/category/delete/{id}" , "CategoryController@mainDelete");
-
 Router::get("admin/category/sub/delete/{id}" , "CategoryController@subDelete");
 
 // product
 Router::get("admin/add-product" , 'ProductsController@show');
-
 Router::put("admin/add-product" , 'ProductsController@add');
-
 Router::get("admin/show-products" , "ProductsController@manageProducts");
 
 Router::get("admin/remove-product/{id}" , "ProductsController@deleteProduct");
-
 Router::get("admin/edit-product/{id}" , "ProductsController@show");
-
 Router::patch("admin/edit-product/{id}" , "ProductsController@update");
 
 //slides
 Router::get("admin/slides/delete/{id}" , "SlidesController@delete");
-
 Router::get("admin/slides" , "SlidesController@show");
-
 Router::put("admin/slides" , "SlidesController@add");
 
+// games
+Router::get("admin/games","GameBoxController@manage");
+Router::put("admin/games","GameBoxController@add");
+Router::get("admin/games/{id}","GameBoxController@delete");
 /*
  *
  *  ___________ restaurant_____________
@@ -233,7 +217,8 @@ Router::get("reserve/{?id}" , 'ReserveController@home');
 Router::post('reserve/{?id}' , 'ReserveController@add');
 
 //games
-Router::get("games/{?id}" , "GamesController@show");
+Router::get("games-page" , "GamesController@gamesPage");
+Router::get("games/{id}" , "GamesController@show");
 
 Router::get('advertise/{id}','GamesController@redirectToAd');
 
@@ -254,10 +239,10 @@ Router::get('dev/dashboard' , 'DevController@home');
 
 Router::post("dev/login" , "DevController@login");
 
-Router::get("dev/game" , "DevController@game");
+Router::get("dev/send" , "DevController@manageGame");
+
+Router::put("dev/send" , "DevController@send");
 
 Router::get("dev/delete/{id}" , "DevController@delete");
-Router::get("test" ,
-    function(){
-        return view('test');
-    });
+
+//Router::get("g/{name}" , "GameController@generate");

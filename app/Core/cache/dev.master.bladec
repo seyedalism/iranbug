@@ -61,14 +61,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
  </p>
  </a>
  </li>
- <li class="nav-item">
- <a href="<?php echo static::e(url('dev/manage')); ?>" class="nav-link">
- <i class="nav-icon fa fa-gamepad"></i>
- <p>
- بازی های شما
- </p>
- </a>
- </li>
+<?php /*                        <li class="nav-item">*/ ?>
+<?php /*                            <a href="<?php echo static::e(url('dev/manage')); ?>" class="nav-link">*/ ?>
+<?php /*                                <i class="nav-icon fa fa-gamepad"></i>*/ ?>
+<?php /*                                <p>*/ ?>
+<?php /*                                    بازی های شما*/ ?>
+<?php /*                                </p>*/ ?>
+<?php /*                            </a>*/ ?>
+<?php /*                        </li>*/ ?>
  <li class="nav-item">
  <a href="<?php echo static::e(url('restaurant/logout')); ?>" class="nav-link">
  <i class="nav-icon fa fa-th"></i>

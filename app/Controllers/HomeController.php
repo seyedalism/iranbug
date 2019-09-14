@@ -1,7 +1,8 @@
-<?php use App\Core\Controller;
+<?php use App\Core\Auth;
+use App\Core\Controller;
 
 use App\Models\Slide;
-use App\Models\{User,Options};
+use App\Models\{Pcode , User , Options};
 
 class HomeController extends Controller
 {
@@ -33,4 +34,18 @@ class HomeController extends Controller
         return view('contact-us',compact('contactUs'));
     }
 
+	public function pcode ($id)
+	{
+		Auth::redirectToLogin('login');
+		$code = $_POST['buy_code'];
+		$p = Pcode::findByCode($code);
+		if(!empty($p) && $p[0]->code == $code) {
+			$p = $p[0];
+			$p->user_id = Auth::returnUser()->id;
+			$p->game_id = $id;
+			$p->part = $_POST['p'];
+			$p->save();
+		}
+		return header('Location: '.$_SERVER['HTTP_REFERER']);
+	}
 }

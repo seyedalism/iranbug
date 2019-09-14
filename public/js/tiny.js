@@ -4,7 +4,7 @@ tinymce.init({
     theme: "modern",
     skin: "lightgray",
 
-    images_upload_url: 'http://a.iranbaguette.com/admin/upload',
+    images_upload_url: 'http://localhost/projects/irabBuget/admin/upload',
 
     width: "100%",
     height: 300,
@@ -54,7 +54,7 @@ tinymce.init({
 
 
 tinymce.activeEditor.uploadImages(function(success) {
-    $.post('http://a.iranbaguette.com/admin/upload', tinymce.activeEditor.getContent()).done(function() {
+    $.post('http://localhost/projects/irabBuget/admin/upload', tinymce.activeEditor.getContent()).done(function() {
         console.log("Uploaded images and posted content as an ajax request.");
     });
 });

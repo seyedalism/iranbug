@@ -1,5 +1,5 @@
 @extends('master')
-@section('title','ایران باگت | مزایای عضویت')
+
 @section('content')
 
 	<div class="container-fluid main-text">

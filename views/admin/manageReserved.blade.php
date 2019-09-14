@@ -57,10 +57,10 @@
                                 @endforelse
                             </table>
 
-                            <ul class="pagination mt-5">
-                                <li><a class="page-link" href="{{ url('admin/manage-products/'.$pages['next']) }}">صفحه بعد</a></li>
-                                <li><a class="page-link" href="{{ url('admin/manage-products/'.$pages['pre']) }}">صفحه قبل</a></li>
-                            </ul>
+{{--                            <ul class="pagination mt-5">--}}
+{{--                                <li><a class="page-link" href="{{ url('admin/manage-products/'.$pages['next']) }}">صفحه بعد</a></li>--}}
+{{--                                <li><a class="page-link" href="{{ url('admin/manage-products/'.$pages['pre']) }}">صفحه قبل</a></li>--}}
+{{--                            </ul>--}}
 
                         </div>
                     </div>

@@ -47,6 +47,41 @@ class Model
         return ($this->fields[$this->primary_key] == 0 || $this->fields[$this->primary_key] == null) ? true : false;
     }
 
+	public static function count ()
+	{
+		try
+		{
+			$obj   = get_called_class();
+			$obj   = new $obj;
+			$sql   = "SELECT COUNT(*) FROM ".$obj->table;
+			Db::$db->setAttribute(\PDO::ATTR_EMULATE_PREPARES, FALSE);
+			$stmt  = Db::$db->prepare($sql);
+			$stmt->execute();
+		}
+		catch(\PDOException $e)
+		{
+			showSystemError("cant find any thing" , $e->getMessage());
+		}
+    }
+
+	public static function random ()
+	{
+		try
+		{
+			$obj   = get_called_class();
+			$obj   = new $obj;
+			$sql   = "SELECT * FROM ".$obj->table." WHERE state = 3 ORDER BY RAND() LIMIT 1";
+			Db::$db->setAttribute(\PDO::ATTR_EMULATE_PREPARES, FALSE);
+			$stmt  = Db::$db->prepare($sql);
+			$stmt->execute();
+		}
+		catch(\PDOException $e)
+		{
+			showSystemError("cant find any thing" , $e->getMessage());
+		}
+		return self::convertToObj($stmt);
+	}
+
     public static function all($from = -1,$to = -1,$order = null)
     {
         try
