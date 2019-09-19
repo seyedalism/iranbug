@@ -144,7 +144,11 @@
 
  <div class="justify-content-center d-flex align-items-center w-100 bg-dark"
  style="height: 200px;background: url(<?php echo static::e(asset('img/mario.png')); ?>);background-repeat: no-repeat;background-blend-mode: multiply;background-size: cover;">
+ <?php if($sell): ?>
+ <a href="<?php echo static::e(asset('upload/'.$game->full)); ?>" style="color: #969896;font-size: 2rem;">دانلود نسخه کامل</a>
+ <?php else: ?>
  <a href="#" style="color: #969896;font-size: 2rem;">خرید و دانلود نسخه کامل بازی</a>
+ <?php endif; ?>
  </div>
 
  <div class="w-100 p-0 m-0">

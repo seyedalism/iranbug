@@ -39,7 +39,7 @@ class HomeController extends Controller
 		Auth::redirectToLogin('login');
 		$code = $_POST['buy_code'];
 		$p = Pcode::findByCode($code);
-		if(!empty($p) && $p[0]->code == $code) {
+		if(!empty($p) && $p[0]->code == $code && !$p[0]->game_id) {
 			$p = $p[0];
 			$p->user_id = Auth::returnUser()->id;
 			$p->game_id = $id;

@@ -12,6 +12,7 @@ class Game extends Model
 		'userid' => -1 ,
 		'poster' => null ,
 		'part' => 0 ,
+		'full' => 0 ,
 		]
 ;
 	protected $guarded = ['id'];
