@@ -53,3 +53,8 @@ fabric.properties
 *.htaccess
 
 public/admin/*
+
+*/_notes
+*_notes
+app/Core/conf.php
+.idea/*
