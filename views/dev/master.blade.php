@@ -61,14 +61,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ url('dev/manage') }}" class="nav-link">
-                                <i class="nav-icon fa fa-gamepad"></i>
-                                <p>
-                                    بازی های شما
-                                </p>
-                            </a>
-                        </li>
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="{{ url('dev/manage') }}" class="nav-link">--}}
+{{--                                <i class="nav-icon fa fa-gamepad"></i>--}}
+{{--                                <p>--}}
+{{--                                    بازی های شما--}}
+{{--                                </p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                         <li class="nav-item">
                             <a href="{{ url('restaurant/logout') }}" class="nav-link">
                                 <i class="nav-icon fa fa-th"></i>

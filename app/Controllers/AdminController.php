@@ -28,9 +28,4 @@ class AdminController extends Controller
         Auth::redirectToLogin('admin/login','admin');
         return view('admin.dashboard');
     }
-
-    public function cyberspace()
-    {
-        return view('admin.manageCyberspace');
-    }
 }

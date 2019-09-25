@@ -57,10 +57,10 @@
  <?php endif; ?>
  </table>
 
- <ul class="pagination mt-5">
- <li><a class="page-link" href="<?php echo static::e(url('admin/manage-products/'.$pages['next'])); ?>">صفحه بعد</a></li>
- <li><a class="page-link" href="<?php echo static::e(url('admin/manage-products/'.$pages['pre'])); ?>">صفحه قبل</a></li>
- </ul>
+<?php /*                            <ul class="pagination mt-5">*/ ?>
+<?php /*                                <li><a class="page-link" href="<?php echo static::e(url('admin/manage-products/'.$pages['next'])); ?>">صفحه بعد</a></li>*/ ?>
+<?php /*                                <li><a class="page-link" href="<?php echo static::e(url('admin/manage-products/'.$pages['pre'])); ?>">صفحه قبل</a></li>*/ ?>
+<?php /*                            </ul>*/ ?>
 
  </div>
  </div>

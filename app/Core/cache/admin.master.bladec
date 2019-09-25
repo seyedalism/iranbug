@@ -277,24 +277,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
  </ul>
 
  </li>
- <li class="nav-item has-treeview">
-
- <a href="<?php echo static::e(url('admin/manage-cyberspace')); ?>" class="nav-link">
-
- <i class="nav-icon fa fa-commenting-o" aria-hidden="true"></i>
-
- <p>
-
- فضای مجازی
-
-
- </p>
-
- </a>
-
-
-
- </li>
 
  <li class="nav-item has-treeview">
 
@@ -361,6 +343,76 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
  </li>
 
+ <li class="nav-item">
+
+ <a href="<?php echo static::e(url('admin/advertise/dynamic')); ?>" class="nav-link">
+
+ <i class="fa fa-circle-o nav-icon"></i>
+
+ <p>ابتدای بازی</p>
+
+ </a>
+
+ </li>
+ <li class="nav-item">
+
+ <a href="<?php echo static::e(url('admin/advertise/zirnevis')); ?>" class="nav-link">
+
+ <i class="fa fa-circle-o nav-icon"></i>
+
+ <p>تبلیغات زیرنویس</p>
+
+ </a>
+
+ </li>
+
+ </ul>
+
+ </li>
+
+
+ <li class="nav-item has-treeview">
+
+ <a href="#" class="nav-link">
+
+ <i class="nav-icon fa fa-gamepad"></i>
+
+ <p>
+
+ بازی ها
+
+ <i class="right fa fa-angle-left"></i>
+
+ </p>
+
+ </a>
+
+ <ul class="nav nav-treeview">
+
+ <li class="nav-item">
+
+ <a href="<?php echo static::e(url('admin/games')); ?>" class="nav-link">
+
+ <i class="fa fa-circle-o nav-icon"></i>
+
+ <p>مدیریت بازی ها</p>
+
+ </a>
+
+ </li>
+
+ <li class="nav-item">
+
+ <a href="<?php echo static::e(url('admin/users-games')); ?>" class="nav-link">
+
+ <i class="fa fa-circle-o nav-icon"></i>
+
+ <p>بازی های ارسالی</p>
+
+ </a>
+
+ </li>
+
  </ul>
 
  </li>
@@ -386,7 +438,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
  <li class="nav-item">
 
- <a href="<?php echo static::e(url('admin/detail-Res')); ?>" class="nav-link">
+ <a href="<?php echo static::e(url('admin/detail-REs')); ?>" class="nav-link">
 
  <i class="fa fa-circle-o nav-icon"></i>
 
@@ -509,59 +561,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
  </div>
 
- <!-- /.content-header -->
-
-
- <!-- Main content -->
-
  <?php echo $this->yieldContent('content'); ?>
 
  <!-- /.content -->
 
  </div>
 
- <!-- /.content-wrapper -->
-
-
- <!-- Control Sidebar -->
-
- <aside class="control-sidebar control-sidebar-dark">
-
- <!-- Control sidebar content goes here -->
-
- <div class="p-3">
-
- <h5>Title</h5>
-
- <p>Sidebar content</p>
-
- </div>
-
- </aside>
-
- <!-- /.control-sidebar -->
-
-
- <!-- Main Footer -->
-
-
 </div>
-
-<!-- ./wrapper -->
-
-
-<!-- REQUIRED SCRIPTS -->
-
-
-<!-- jQuery -->
 
 <script src="<?php echo static::e(asset('admin/plugins/jquery/jquery.min.js')); ?>"></script>
 
-<!-- Bootstrap 4 -->
-
 <script src="<?php echo static::e(asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
-
-<!-- AdminLTE App -->
 
 <script src="<?php echo static::e(asset('admin/dist/js/adminlte.min.js')); ?>"></script>
 

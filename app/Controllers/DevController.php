@@ -3,7 +3,7 @@
 use App\Core\Auth;
 use App\Core\Controller;
 
-use App\Models\{Developer};
+use App\Models\{Developer , Game};
 
 class DevController extends Controller
 {
@@ -36,6 +36,18 @@ class DevController extends Controller
     {
         Auth::logout('Developer');
         header('Location: '.url('dev/login'));
+    }
+
+    public function manageGame()
+    {
+    	$user = Auth::returnUser('Developer');
+    	$games = Game::findBy();
+	    return view('dev.sendGame');
+    }
+
+    public function send()
+    {
+        header('Location: '.url('dev/dashboard'));
     }
 
 }

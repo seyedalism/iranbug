@@ -7,19 +7,23 @@
 @section('content')
     <div class="container-fluid mt-2">
         <div class="row p-2"></div>
-        <div class="row mb-3 justify-content-center" style="overflow-x: hidden;overflow-y:scroll;height: 25rem; direction: ltr !important">
-        @for($i=0;$i<30;$i++)
-                <a href="{{url('restaurants/1')}}" style="color: white">
+        <div class="row mb-3 justify-content-center" style="direction: ltr !important">
+
+        @forelse($games as $game)
+                <a style="color: white">
                     <div class="res-ads ads-parent position-relative m-3 mt-2">
-                        <a href="games/1" style="color: #fff">
-                            <img class="img-fluid w-100 h-100" src="{{ asset('img/mario.png') }}">
+                        <a href="{{ url('games/'.$game->id) }}" style="color: #fff">
+                            <img class="img-fluid w-100 h-100" src="{{ asset('upload/'.$game->poster) }}">
                             <span class="IB-ads text-center w-100 p-2 position-absolute h-50">
-                              بازی گوسفند دیوانه
+                              {{ $game->name }}
                             </span>
                         </a>
                     </div>
                 </a>
-        @endfor
+        @empty
+            <div class="alert alert-info">هیچ بازی یافت نشد</div>
+        @endforelse
+
         </div>
 
 
